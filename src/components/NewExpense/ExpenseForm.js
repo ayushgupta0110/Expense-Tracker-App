@@ -1,7 +1,7 @@
 import React,{ useState} from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 //   const [enteredTitle, setEnteredTitle] = useState("");
 //   const [enteredAmount, setEnteredAmount] = useState("");
 //   const [enteredDate, setEnteredDate] = useState("");
@@ -40,12 +40,14 @@ const ExpenseForm = () => {
     setUserInput((prevState) => {
       return { ...prevState, date: event.target.value}
     });
+    
  };
 
  const submitHandler = (event) => {
    event.preventDefault();
+   
+   props.onSaveExpenseData(userInput);  //Passing new Expense to the Parent component(NewExpense)
 
-   console.log(userInput);
    setUserInput(() => {
     return {title:'',amount:'',date:'' }
   });
