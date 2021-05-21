@@ -9,26 +9,36 @@ const ExpenseForm = () => {
         enteredTitle: '',
         enteredAmount: '',
         enteredDate: '',
-    })
+    });
 
   const titleChangeHandler = (event) => {
-    setUserInput({
-        ...userInput,
-        enteredTitle: event.target.value,
+    // setUserInput({                      This will work in most cases but it not good when multiple states are there
+    //     ...userInput,
+    //     enteredTitle: event.target.value,
+    // });
+
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value}
     });
   };
 
   const amountChangeHandler = (event) => {
-    setUserInput({
-        ...userInput,
-        enteredAmount: event.target.value,
+    // setUserInput({
+    //     ...userInput,
+    //     enteredAmount: event.target.value,
+    // });
+    setUserInput((prevState) => {
+      return { ...prevState, enteredAmount: event.target.value}
     });
  };
 
   const dateChangeHandler = (event) => {
-    setUserInput({
-        ...userInput,
-        enteredDate: event.target.value,
+    // setUserInput({
+    //     ...userInput,
+    //     enteredDate: event.target.value,
+    // });
+    setUserInput((prevState) => {
+      return { ...prevState, enteredDate: event.target.value}
     });
  };
 
