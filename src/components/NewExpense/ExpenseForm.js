@@ -7,7 +7,7 @@ const ExpenseForm = (props) => {
 //   const [enteredDate, setEnteredDate] = useState("");
     const [userInput,setUserInput] = useState({
         title: '',
-        amount: '',
+        amount: +'',
         date: '',
     });
 
