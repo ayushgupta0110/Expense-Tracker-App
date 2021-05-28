@@ -8,7 +8,7 @@ const Chart = (props) => {
         <ChartBar
           id={dataPoint.label}
           value={dataPoint.value}
-          maxValue={dataPoint.maxValue}
+          maxValue={null}
           label={dataPoint.label}
         />;
       })}
